@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UcakSavar.Desktop
+namespace DarkSide.Desktop
 {
     static class Program
     {

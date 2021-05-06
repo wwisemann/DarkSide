@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UcakSavar.Desktop", "UcakSavar.Desktop\UcakSavar.Desktop.csproj", "{194A6557-3261-45A5-9A96-ABAA531494F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkSide.Desktop", "UcakSavar.Desktop\DarkSide.Desktop.csproj", "{194A6557-3261-45A5-9A96-ABAA531494F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UcakSavar.Library", "UcakSavar.Library\UcakSavar.Library.csproj", "{5FA9060F-438B-4E75-AF42-5532D75AFB3B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkSide.Library", "UcakSavar.Library\DarkSide.Library.csproj", "{5FA9060F-438B-4E75-AF42-5532D75AFB3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

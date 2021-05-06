@@ -1,5 +1,5 @@
 ﻿
-namespace UcakSavar.Desktop
+namespace DarkSide.Desktop
 {
     partial class MainForm
     {
@@ -67,7 +67,6 @@ namespace UcakSavar.Desktop
             this.timeLabel.TabIndex = 1;
             this.timeLabel.Text = "0:00";
             this.timeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.timeLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // infoLabel
             // 
@@ -78,13 +77,12 @@ namespace UcakSavar.Desktop
             this.infoLabel.Size = new System.Drawing.Size(453, 117);
             this.infoLabel.TabIndex = 0;
             this.infoLabel.Text = "Başla = Enter\r\nHareket = Yön Tuşları \r\nAteş = Boşluk \r\n";
-            this.infoLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::UcakSavar.Desktop.Properties.Resources.arkaplan1;
+            this.BackgroundImage = global::DarkSide.Desktop.Properties.Resources.arkaplan1;
             this.ClientSize = new System.Drawing.Size(1180, 772);
             this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.ucaksavarPanel);
@@ -93,6 +91,7 @@ namespace UcakSavar.Desktop
             this.Name = "MainForm";
             this.Text = "Dark Side";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
             this.ResumeLayout(false);

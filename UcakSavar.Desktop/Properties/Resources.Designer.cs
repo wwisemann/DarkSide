@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UcakSavar.Desktop.Properties {
+namespace DarkSide.Desktop.Properties {
     using System;
     
     

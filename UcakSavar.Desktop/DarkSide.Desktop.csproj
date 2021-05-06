@@ -89,5 +89,11 @@
     <None Include="Resources\kisspng-chessboard-draughts-chess-piece-board-game-checkerboard-5a8a801f173ca2.5869169315190262070952.jpg" />
     <None Include="Resources\arkaplan.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UcakSavar.Library\DarkSide.Library.csproj">
+      <Project>{5fa9060f-438b-4e75-af42-5532d75afb3b}</Project>
+      <Name>DarkSide.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
