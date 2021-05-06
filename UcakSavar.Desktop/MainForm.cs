@@ -1,4 +1,5 @@
-﻿using DarkSide.Library.Concrete;
+﻿using System;
+using DarkSide.Library.Concrete;
 using DarkSide.Library.Enum;
 using System.Windows.Forms;
 
@@ -10,6 +11,8 @@ namespace DarkSide.Desktop
         public MainForm()
         {
             InitializeComponent();
+
+            _game.ElapsedTimeHasChanged += Game_ElapsedTimeHasChanged;
         }
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
@@ -29,6 +32,11 @@ namespace DarkSide.Desktop
                     _game.Fire();
                     break;
             }
+        }
+
+        private void Game_ElapsedTimeHasChanged(object sender, EventArgs e)
+        {
+            timeLabel.Text = _game.ElapsedTime.ToString(@"m\:ss");
         }
     }
 }

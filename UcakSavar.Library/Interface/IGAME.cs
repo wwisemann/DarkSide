@@ -5,6 +5,7 @@ namespace DarkSide.Library.Interface
 {
     internal interface IGame
     {
+        event EventHandler ElapsedTimeHasChanged;
         bool DoesItContinue { get; }
         TimeSpan ElapsedTime { get; }
         void Start();
