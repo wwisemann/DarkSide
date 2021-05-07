@@ -3,7 +3,7 @@ using DarkSide.Library.Enum;
 using System;
 using System.Drawing;
 
-namespace DarkSide.Library.Concrete
+namespace DarkSide.Library.Abstract
 {
     internal class DeathStar : Cisim
     {

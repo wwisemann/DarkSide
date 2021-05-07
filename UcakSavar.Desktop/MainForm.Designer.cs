@@ -31,10 +31,11 @@ namespace DarkSide.Desktop
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.deathstarPanel = new System.Windows.Forms.Panel();
-            this.panelInfo = new System.Windows.Forms.Panel();
+            this.infoPanel = new System.Windows.Forms.Panel();
             this.timeLabel = new System.Windows.Forms.Label();
             this.infoLabel = new System.Windows.Forms.Label();
-            this.panelInfo.SuspendLayout();
+            this.battleFieldPanel = new System.Windows.Forms.Panel();
+            this.infoPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // deathstarPanel
@@ -46,16 +47,16 @@ namespace DarkSide.Desktop
             this.deathstarPanel.Size = new System.Drawing.Size(1180, 50);
             this.deathstarPanel.TabIndex = 1;
             // 
-            // panelInfo
+            // infoPanel
             // 
-            this.panelInfo.BackColor = System.Drawing.Color.Black;
-            this.panelInfo.Controls.Add(this.timeLabel);
-            this.panelInfo.Controls.Add(this.infoLabel);
-            this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelInfo.Location = new System.Drawing.Point(0, 0);
-            this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(1180, 135);
-            this.panelInfo.TabIndex = 2;
+            this.infoPanel.BackColor = System.Drawing.Color.Black;
+            this.infoPanel.Controls.Add(this.timeLabel);
+            this.infoPanel.Controls.Add(this.infoLabel);
+            this.infoPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.infoPanel.Location = new System.Drawing.Point(0, 0);
+            this.infoPanel.Name = "infoPanel";
+            this.infoPanel.Size = new System.Drawing.Size(1180, 135);
+            this.infoPanel.TabIndex = 2;
             // 
             // timeLabel
             // 
@@ -78,14 +79,24 @@ namespace DarkSide.Desktop
             this.infoLabel.TabIndex = 0;
             this.infoLabel.Text = "Başla = Enter\r\nHareket = Yön Tuşları \r\nAteş = Boşluk \r\n";
             // 
+            // battleFieldPanel
+            // 
+            this.battleFieldPanel.BackgroundImage = global::DarkSide.Desktop.Properties.Resources.arkaplan1;
+            this.battleFieldPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.battleFieldPanel.Location = new System.Drawing.Point(0, 135);
+            this.battleFieldPanel.Name = "battleFieldPanel";
+            this.battleFieldPanel.Size = new System.Drawing.Size(1180, 587);
+            this.battleFieldPanel.TabIndex = 3;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1180, 772);
-            this.Controls.Add(this.panelInfo);
+            this.Controls.Add(this.battleFieldPanel);
+            this.Controls.Add(this.infoPanel);
             this.Controls.Add(this.deathstarPanel);
             this.ForeColor = System.Drawing.Color.Yellow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -95,8 +106,8 @@ namespace DarkSide.Desktop
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
-            this.panelInfo.ResumeLayout(false);
-            this.panelInfo.PerformLayout();
+            this.infoPanel.ResumeLayout(false);
+            this.infoPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -104,9 +115,10 @@ namespace DarkSide.Desktop
         #endregion
 
         private System.Windows.Forms.Panel deathstarPanel;
-        private System.Windows.Forms.Panel panelInfo;
+        private System.Windows.Forms.Panel infoPanel;
         private System.Windows.Forms.Label infoLabel;
         private System.Windows.Forms.Label timeLabel;
+        private System.Windows.Forms.Panel battleFieldPanel;
     }
 }
 

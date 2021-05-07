@@ -1,5 +1,5 @@
 ﻿using System;
-using DarkSide.Library.Concrete;
+using DarkSide.Library.Abstract;
 using DarkSide.Library.Enum;
 using System.Windows.Forms;
 
@@ -13,7 +13,7 @@ namespace DarkSide.Desktop
         {
             InitializeComponent();
 
-            _game = new Game(deathstarPanel);
+            _game = new Game(deathstarPanel,battleFieldPanel);
             _game.ElapsedTimeHasChanged += Game_ElapsedTimeHasChanged;
         }
 

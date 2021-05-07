@@ -3,18 +3,26 @@ using System.Drawing;
 using DarkSide.Library.Enum;
 using DarkSide.Library.Interface;
 using System.Windows.Forms;
-using DarkSide.Library.Concrete;
+using DarkSide.Library.Abstract;
+using System.Collections.Generic;
 
-namespace DarkSide.Library.Concrete
+namespace DarkSide.Library.Abstract
 {
     public class Game : IGame
     {
         #region Fields
 
         private readonly Timer _elapsedTimer = new Timer { Interval = 1000 };
+        private readonly Timer _moveTimer = new Timer { Interval = 100 };
         private TimeSpan _elapsedTime;
+
         private readonly Panel _deathstarPanel;
         private DeathStar _deathStar;
+
+        private readonly Panel _battleFieldPanel;
+
+        private readonly List<Bullet> _bullets = new List<Bullet>();
+
 
         #endregion
 
@@ -41,10 +49,13 @@ namespace DarkSide.Library.Concrete
 
         #region Methods
 
-        public Game(Panel deathstarPanel)
+        public Game(Panel deathstarPanel, Panel battleFieldPanel)
         {
             _deathstarPanel = deathstarPanel;
+            _battleFieldPanel = battleFieldPanel;
+
             _elapsedTimer.Tick += ElapsedTimer_Tick;
+            _moveTimer.Tick += MoveTimer_Tick;
         }
 
         private void ElapsedTimer_Tick(object sender, EventArgs e)
@@ -52,14 +63,38 @@ namespace DarkSide.Library.Concrete
             ElapsedTime += TimeSpan.FromSeconds(1);
         }
 
+        private void MoveTimer_Tick(object sender, EventArgs e)
+        {
+            MoveBullets();
+        }
+
+        private void MoveBullets()
+        {
+            for (int i = _bullets.Count - 1; i >= 0; i--)
+            {
+                var bullet = _bullets[i];
+                var didItHit = bullet.MoveIt(Direction.up);
+                if (didItHit)
+                {
+                    _bullets.Remove(bullet);
+                    _battleFieldPanel.Controls.Remove(bullet);
+                }
+            }                                    
+        }
+
         public void Start()
         {
             if (DoesItContinue) return;
 
             DoesItContinue = true;
-            _elapsedTimer.Start();
-
+            StartTimers();
             CreateDeathStar();
+        }
+
+        private void StartTimers()
+        {
+            _elapsedTimer.Start();
+            _moveTimer.Start();
         }
 
         private void CreateDeathStar()
@@ -73,12 +108,23 @@ namespace DarkSide.Library.Concrete
             if (!DoesItContinue) return;
 
             DoesItContinue = false;
+            StopTimers();
+        }
+
+        private void StopTimers()
+        {
             _elapsedTimer.Stop();
+            _moveTimer.Stop();
         }
 
         public void Fire()
         {
-            throw new NotImplementedException();
+            if (!DoesItContinue) return;
+
+            var bullet = new Bullet(_battleFieldPanel.Size, _deathStar.Center);
+            _bullets.Add(bullet);
+            _battleFieldPanel.Controls.Add(bullet);
+           
         }
 
         public void Move(Direction direction)
