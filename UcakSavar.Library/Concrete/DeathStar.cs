@@ -1,12 +1,16 @@
 ﻿using DarkSide.Library.Abstract;
+using DarkSide.Library.Enum;
+using System;
+using System.Drawing;
 
 namespace DarkSide.Library.Concrete
 {
     internal class DeathStar : Cisim
     {
-        public DeathStar(int panelWidth)
+        public DeathStar(int panelWidth, Size movementSpaceSizes ) : base(movementSpaceSizes)
         {
-            Left = (panelWidth - Width) / 2;
+            Center = panelWidth / 2;
+            MovementDistance = Width;
         }
     }
 }

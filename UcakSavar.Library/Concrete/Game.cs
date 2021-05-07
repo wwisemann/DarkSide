@@ -14,7 +14,7 @@ namespace DarkSide.Library.Concrete
         private readonly Timer _elapsedTimer = new Timer { Interval = 1000 };
         private TimeSpan _elapsedTime;
         private readonly Panel _deathstarPanel;
-
+        private DeathStar _deathStar;
 
         #endregion
 
@@ -64,11 +64,8 @@ namespace DarkSide.Library.Concrete
 
         private void CreateDeathStar()
         {
-            var deathstar = new DeathStar(_deathstarPanel.Width)
-            {
-                Image = Image.FromFile(@"Icon\DeathStar.png")
-            };
-            _deathstarPanel.Controls.Add(deathstar);
+            _deathStar = new DeathStar(_deathstarPanel.Width, _deathstarPanel.Size);
+            _deathstarPanel.Controls.Add(_deathStar);
         }
 
         private void Finish()
@@ -86,7 +83,9 @@ namespace DarkSide.Library.Concrete
 
         public void Move(Direction direction)
         {
-            throw new NotImplementedException();
+            if (!DoesItContinue) return;
+                      
+            _deathStar.MoveIt(direction);
         }
 
         #endregion

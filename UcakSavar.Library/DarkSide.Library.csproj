@@ -52,6 +52,7 @@
     <Compile Include="Concrete\Game.cs" />
     <Compile Include="Enum\Direction.cs" />
     <Compile Include="Interface\IGAME.cs" />
+    <Compile Include="Interface\IMoved.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
