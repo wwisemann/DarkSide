@@ -7,11 +7,13 @@ namespace DarkSide.Desktop
 {
     public partial class MainForm : Form
     {
-        private readonly Game _game = new Game();
+        private readonly Game _game;
+
         public MainForm()
         {
             InitializeComponent();
 
+            _game = new Game(deathstarPanel);
             _game.ElapsedTimeHasChanged += Game_ElapsedTimeHasChanged;
         }
 
@@ -37,6 +39,11 @@ namespace DarkSide.Desktop
         private void Game_ElapsedTimeHasChanged(object sender, EventArgs e)
         {
             timeLabel.Text = _game.ElapsedTime.ToString(@"m\:ss");
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

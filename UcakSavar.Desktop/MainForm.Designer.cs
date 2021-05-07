@@ -30,21 +30,21 @@ namespace DarkSide.Desktop
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.ucaksavarPanel = new System.Windows.Forms.Panel();
+            this.deathstarPanel = new System.Windows.Forms.Panel();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.timeLabel = new System.Windows.Forms.Label();
             this.infoLabel = new System.Windows.Forms.Label();
             this.panelInfo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ucaksavarPanel
+            // deathstarPanel
             // 
-            this.ucaksavarPanel.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ucaksavarPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ucaksavarPanel.Location = new System.Drawing.Point(0, 722);
-            this.ucaksavarPanel.Name = "ucaksavarPanel";
-            this.ucaksavarPanel.Size = new System.Drawing.Size(1180, 50);
-            this.ucaksavarPanel.TabIndex = 1;
+            this.deathstarPanel.BackColor = System.Drawing.Color.Black;
+            this.deathstarPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.deathstarPanel.Location = new System.Drawing.Point(0, 722);
+            this.deathstarPanel.Name = "deathstarPanel";
+            this.deathstarPanel.Size = new System.Drawing.Size(1180, 50);
+            this.deathstarPanel.TabIndex = 1;
             // 
             // panelInfo
             // 
@@ -85,12 +85,13 @@ namespace DarkSide.Desktop
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1180, 772);
             this.Controls.Add(this.panelInfo);
-            this.Controls.Add(this.ucaksavarPanel);
+            this.Controls.Add(this.deathstarPanel);
             this.ForeColor = System.Drawing.Color.Yellow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Dark Side";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
@@ -100,7 +101,7 @@ namespace DarkSide.Desktop
 
         #endregion
 
-        private System.Windows.Forms.Panel ucaksavarPanel;
+        private System.Windows.Forms.Panel deathstarPanel;
         private System.Windows.Forms.Panel panelInfo;
         private System.Windows.Forms.Label infoLabel;
         private System.Windows.Forms.Label timeLabel;

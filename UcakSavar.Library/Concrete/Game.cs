@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Drawing;
 using DarkSide.Library.Enum;
 using DarkSide.Library.Interface;
 using System.Windows.Forms;
+using DarkSide.Library.Concrete;
 
 namespace DarkSide.Library.Concrete
 {
@@ -11,6 +13,8 @@ namespace DarkSide.Library.Concrete
 
         private readonly Timer _elapsedTimer = new Timer { Interval = 1000 };
         private TimeSpan _elapsedTime;
+        private readonly Panel _deathstarPanel;
+
 
         #endregion
 
@@ -21,7 +25,7 @@ namespace DarkSide.Library.Concrete
         #endregion
 
         #region Features
-    
+
         public bool DoesItContinue { get; private set; }
         public TimeSpan ElapsedTime
         {
@@ -36,9 +40,10 @@ namespace DarkSide.Library.Concrete
         #endregion
 
         #region Methods
-      
-        public Game()
+
+        public Game(Panel deathstarPanel)
         {
+            _deathstarPanel = deathstarPanel;
             _elapsedTimer.Tick += ElapsedTimer_Tick;
         }
 
@@ -53,6 +58,17 @@ namespace DarkSide.Library.Concrete
 
             DoesItContinue = true;
             _elapsedTimer.Start();
+
+            CreateDeathStar();
+        }
+
+        private void CreateDeathStar()
+        {
+            var deathstar = new DeathStar(_deathstarPanel.Width)
+            {
+                Image = Image.FromFile(@"Icon\DeathStar.png")
+            };
+            _deathstarPanel.Controls.Add(deathstar);
         }
 
         private void Finish()
