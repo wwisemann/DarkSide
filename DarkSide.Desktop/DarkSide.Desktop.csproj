@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{194A6557-3261-45A5-9A96-ABAA531494F6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>UcakSavar.Desktop</RootNamespace>
-    <AssemblyName>UcakSavar.Desktop</AssemblyName>
+    <RootNamespace>DarkSide.Desktop</RootNamespace>
+    <AssemblyName>DarkSide.Desktop</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -85,12 +85,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="airplane.ico" />
-    <None Include="Resources\arkaplan1.jpg" />
-    <None Include="Resources\kisspng-chessboard-draughts-chess-piece-board-game-checkerboard-5a8a801f173ca2.5869169315190262070952.jpg" />
+    <None Include="Resources\DarthVader.ico" />
     <None Include="Resources\arkaplan.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UcakSavar.Library\DarkSide.Library.csproj">
+    <ProjectReference Include="..\DarkSide.Library\DarkSide.Library.csproj">
       <Project>{5fa9060f-438b-4e75-af42-5532d75afb3b}</Project>
       <Name>DarkSide.Library</Name>
     </ProjectReference>

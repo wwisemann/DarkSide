@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using DarkSide.Library.Abstract;
 
 namespace DarkSide.Library.Abstract
 {

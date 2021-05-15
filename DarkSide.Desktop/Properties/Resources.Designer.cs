@@ -39,7 +39,7 @@ namespace DarkSide.Desktop.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("UcakSavar.Desktop.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DarkSide.Desktop.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -71,23 +71,12 @@ namespace DarkSide.Desktop.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Bitmap arkaplan1 {
+        internal static System.Drawing.Icon DarthVader {
             get {
-                object obj = ResourceManager.GetObject("arkaplan1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap kisspng_chessboard_draughts_chess_piece_board_game_checkerboard_5a8a801f173ca2_5869169315190262070952 {
-            get {
-                object obj = ResourceManager.GetObject("kisspng-chessboard-draughts-chess-piece-board-game-checkerboard-5a8a801f173ca2.58" +
-                        "69169315190262070952", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("DarthVader", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
     }

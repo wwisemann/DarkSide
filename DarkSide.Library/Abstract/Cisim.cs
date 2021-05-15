@@ -37,7 +37,7 @@ namespace DarkSide.Library.Abstract
         }
         protected Cisim(Size movementSpaceSizes)
         {
-            Image = Image.FromFile($@"Icon\{GetType().Name}.png");
+            Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(GetType().Name);
             MovementSpaceSizes = movementSpaceSizes;
             SizeMode = PictureBoxSizeMode.AutoSize;
         }
@@ -100,7 +100,7 @@ namespace DarkSide.Library.Abstract
             var newTop = Top - MovementDistance;
             var willItOwerflow = newTop < 0;
             Top = willItOwerflow ? 0 : newTop;
-
+            
             return Top == 0;
         }
     }

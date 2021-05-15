@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Drawing;
 using DarkSide.Library.Enum;
 using DarkSide.Library.Interface;
 using System.Windows.Forms;
-using DarkSide.Library.Abstract;
 using System.Collections.Generic;
 
 namespace DarkSide.Library.Abstract
@@ -70,6 +68,8 @@ namespace DarkSide.Library.Abstract
 
         private void MoveBullets()
         {
+            Console.WriteLine(_bullets.Count);
+
             for (int i = _bullets.Count - 1; i >= 0; i--)
             {
                 var bullet = _bullets[i];
@@ -79,7 +79,7 @@ namespace DarkSide.Library.Abstract
                     _bullets.Remove(bullet);
                     _battleFieldPanel.Controls.Remove(bullet);
                 }
-            }                                    
+            }
         }
 
         public void Start()
