@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace DarkSide.Library.Abstract
+namespace DarkSide.Library.Concrete
 {
     internal class Bullet : Cisim
     {

@@ -4,7 +4,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace DarkSide.Library.Abstract
+namespace DarkSide.Library.Concrete
 {
     internal abstract class Cisim : PictureBox, IMoved
     {
@@ -65,9 +65,9 @@ namespace DarkSide.Library.Abstract
 
             var newLeft = Left - MovementDistance;
             var willItOwerflow = newLeft < 0;
-            Left = willItOwerflow ? 0 : newLeft;
+            Left = willItOwerflow ? Left : newLeft;
 
-            return Left == 0;
+            return willItOwerflow;
         }
 
         private bool MoveDown()
@@ -87,9 +87,9 @@ namespace DarkSide.Library.Abstract
                 var newRight = Right + MovementDistance;
                 var willItOwerflow = newRight > MovementSpaceSizes.Width;
 
-                Right = willItOwerflow ? MovementSpaceSizes.Width : newRight;
+                Right = willItOwerflow ? Right : newRight;
                 
-                return Right == MovementSpaceSizes.Width;
+                return willItOwerflow;
             }
         }
 

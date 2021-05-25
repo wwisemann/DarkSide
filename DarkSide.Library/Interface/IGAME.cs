@@ -13,5 +13,4 @@ namespace DarkSide.Library.Interface
         void Move(Direction direction);
     }
 
-
 }
