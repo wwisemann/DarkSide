@@ -1,4 +1,11 @@
-﻿using DarkSide.Library.Enum;
+﻿/************************************************************
+*****                                                   *****
+*****           Arifcan Yılmaz  - b201200048            *****
+*****             NDP Uçaksavar Projesi                 *****
+*****                                                   *****
+*************************************************************/
+
+using DarkSide.Library.Enum;
 using System.Drawing;
 
 namespace DarkSide.Library.Interface

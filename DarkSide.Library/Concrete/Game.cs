@@ -1,4 +1,11 @@
-﻿using System;
+﻿/************************************************************
+*****                                                   *****
+*****           Arifcan Yılmaz  - b201200048            *****
+*****             NDP Uçaksavar Projesi                 *****
+*****                                                   *****
+*************************************************************/
+
+using System;
 using DarkSide.Library.Enum;
 using DarkSide.Library.Interface;
 using System.Windows.Forms;
@@ -13,7 +20,7 @@ namespace DarkSide.Library.Concrete
 
         private readonly Timer _elapsedTimer = new Timer { Interval = 1000 };
         private readonly Timer _moveTimer = new Timer { Interval = 100 };
-        private readonly Timer _enemyTimer = new Timer { Interval = 3000 };
+        private readonly Timer _enemyTimer = new Timer { Interval = 2600 };
         private TimeSpan _elapsedTime;
 
         private readonly Panel _deathstarPanel;

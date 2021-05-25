@@ -1,4 +1,11 @@
-﻿using DarkSide.Library.Concrete;
+﻿/************************************************************
+*****                                                   *****
+*****           Arifcan Yılmaz  - b201200048            *****
+*****             NDP Uçaksavar Projesi                 *****
+*****                                                   *****
+*************************************************************/
+
+using DarkSide.Library.Concrete;
 using DarkSide.Library.Enum;
 using System;
 using System.Drawing;
