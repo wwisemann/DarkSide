@@ -45,7 +45,7 @@ namespace DarkSide.Desktop
                     _game.Pause();
                     break;
                 case Keys.Tab:
-                    _game.ShowScoreboard();
+                    ShowScoreboard();
                     break;
             }
         }
@@ -55,23 +55,15 @@ namespace DarkSide.Desktop
             timeLabel.Text = _game.ElapsedTime.ToString(@"m\:ss");
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
         private void Game_ScoreHasChanged(object sender, int score)
         {
             lbl_Score.Text = score.ToString();
         }
 
-        private void infoLabel_Click(object sender, EventArgs e)
+        public void ShowScoreboard()
         {
-
-        }
-
-        private void battleFieldPanel_Paint(object sender, PaintEventArgs e)
-        {
-
+            ScoreBoard frm = new ScoreBoard();
+            frm.ShowDialog();
         }
     }
 }

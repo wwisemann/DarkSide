@@ -10,7 +10,9 @@ using DarkSide.Library.Enum;
 using DarkSide.Library.Interface;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.IO;
 using System.Drawing;
+using System.Linq;
 
 namespace DarkSide.Library.Concrete
 {
@@ -140,8 +142,6 @@ namespace DarkSide.Library.Concrete
                 if (didItHit)
                 {
                     Finish();
-                    //todo: game over ekranı ekle
-                    //todo: skoru kaydet
                 }
             }
         }
@@ -188,10 +188,6 @@ namespace DarkSide.Library.Concrete
             }
             DoesItContinue = !DoesItContinue;
         }
-        public void ShowScoreboard()
-        {
-            //todo:
-        }
 
         private void Finish()
         {
@@ -200,6 +196,19 @@ namespace DarkSide.Library.Concrete
             DoesItContinue = false;
             StopTimers();
 
+            List<string> enİyi5SkorTablosu = File.ReadAllLines("BestFiveScores").ToList();
+            for (int i = 0; i < 5; i++)
+            {
+                if ((_score) > Convert.ToInt32(enİyi5SkorTablosu[i]))
+                {
+                    enİyi5SkorTablosu.Insert(i, (_score).ToString());
+
+                    enİyi5SkorTablosu.RemoveAt(5);
+
+                    File.WriteAllLines("BestFiveScores", enİyi5SkorTablosu);
+                    break;
+                }
+            }
         }
 
         private void StopTimers()
@@ -207,7 +216,7 @@ namespace DarkSide.Library.Concrete
             _elapsedTimer.Stop();
             _moveTimer.Stop();
             _enemyTimer.Stop();
-            
+
         }
 
         public void Fire()
